@@ -39,7 +39,7 @@ object MultiShuffleTest {
       rddArray(i) = r
     }
     val stepArray = rddArray.map { rdd =>
-      rdd.map(s => (s(0), 1)).reduceByKey(_ + _)
+      rdd.map(s => (s.substring(0, 2), 1)).reduceByKey(_ + _)
     }
     val a = stepArray(0)
     val res = numShuffle match {
