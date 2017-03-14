@@ -13,7 +13,7 @@ object MultiShuffleTest {
     val minPartition = args(1).toInt
     val maxPartition = args(2).toInt
     val recordsPerIndex = args(3).toInt
-    if (numShuffle > 3) {
+    if (numShuffle > 4) {
       println("Usage: spark-submit --class MultiShuffleTest --jar path_to_SparkTest.jar " +
         "num_shuffle min_partition max_partition records")
       println(s"num_shuffle should be 1 or 2 or 3 or 4. Got ${numShuffle}")
@@ -49,5 +49,6 @@ object MultiShuffleTest {
       case 4 => a.cogroup(stepArray(1), stepArray(2), stepArray(3))
     }
     println(res.count())
+    println(res.toDebugString)
   }
 }
