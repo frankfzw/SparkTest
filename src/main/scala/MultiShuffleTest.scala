@@ -23,7 +23,7 @@ object MultiShuffleTest {
     val rddArray = new Array[RDD[String]](numShuffle)
 
     val conf = new SparkConf()
-    conf.setAppName("MultiShuffleTest")
+    conf.setAppName("Multiple Shuffle Test")
     val sc = new SparkContext(conf)
     for (i <- 0 until numShuffle) {
       val random = scala.util.Random
